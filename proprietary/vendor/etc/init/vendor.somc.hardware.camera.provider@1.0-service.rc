@@ -4,5 +4,7 @@ service vendor.somc.hardware.camera-provider-1-0 /vendor/bin/hw/vendor.somc.hard
     group camera audio input drmrpc oem_2993 oem_2996
     ioprio rt 4
     capabilities SYS_NICE
+    setenv LD_PRELOAD /vendor/lib/libsensorfix.so:/vendor/lib/cama15/libutils.so:/vendor/lib/cama15/libui.so:/vendor/lib/cama15/libc++.so
+    setenv LD_LIBRARY_PATH /vendor/lib/cama15:/vendor/lib:/system/lib
     task_profiles CameraServiceCapacity MaxPerformance
     socket cammw_tintless stream 0660 cameraserver camera
